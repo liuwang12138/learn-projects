@@ -2,31 +2,37 @@ package com.gf.juc.part01;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.concurrent.atomic.AtomicInteger;
+import java.util.concurrent.atomic.AtomicLong;
 import java.util.concurrent.atomic.LongAdder;
 
+/**
+ * synchronized vs atomicInteger vs Long Adder
+ * 
+ * 在高并发情况下，LongAdder > AtomicInteger > synchronized
+ *
+ */
 public class G06_SyncVsAtomicVsLongAdder {
 	
-	public static int count = 0;
+	public static long count = 0;
 	
-	public static AtomicInteger atomicCount = new AtomicInteger();
+	public static AtomicLong atomicCount = new AtomicLong(0L);
 	
 	public static LongAdder laCount = new LongAdder();
 	
 	public static synchronized void syncAdd() {
-		for (int i=0; i<10000; i++)
+		for (int i=0; i<100000; i++)
 			count++;
 	}
 	
 	public static void atomicAdd() {
-		for (int i=0; i<10000; i++) {
+		for (int i=0; i<100000; i++) {
 			atomicCount.incrementAndGet();
 		}
 	}
 	
 	public static void longAdderAdd() {
-		for (int i=0; i<10000; i++) {
-			laCount.add(1L);
+		for (int i=0; i<100000; i++) {
+			laCount.increment();
 		}
 	}
 	
@@ -35,13 +41,13 @@ public class G06_SyncVsAtomicVsLongAdder {
 		List<Thread> syncThreads = new ArrayList<>();
 		List<Thread> atomicThreads = new ArrayList<>();
 		List<Thread> longAdderThreads = new ArrayList<>();
-		for (int i=0; i<100000; i++) {
+		for (int i=0; i<1000; i++) {
 			syncThreads.add(new Thread(()->syncAdd()));
 		}
-		for (int i=0; i<100000; i++) {
+		for (int i=0; i<1000; i++) {
 			atomicThreads.add(new Thread(()->atomicAdd()));
 		}
-		for (int i=0; i<100000; i++) {
+		for (int i=0; i<1000; i++) {
 			longAdderThreads.add(new Thread(()->longAdderAdd())); 
 		}
 		
@@ -82,6 +88,7 @@ public class G06_SyncVsAtomicVsLongAdder {
 		});
 		Long t6 = System.currentTimeMillis();
 		System.out.println("longAdder : " + laCount.intValue() + " , " +  (t6 - t5));
+		
 	}
 
 }
