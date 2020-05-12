@@ -1,13 +1,12 @@
 package com.gf.juc.part02;
 
 import java.util.concurrent.locks.Lock;
-import java.util.concurrent.locks.ReentrantLock;
 import java.util.concurrent.locks.ReentrantReadWriteLock;
 import java.util.concurrent.locks.ReentrantReadWriteLock.ReadLock;
 import java.util.concurrent.locks.ReentrantReadWriteLock.WriteLock;
 
 /**
- * ¶ÁĞ´Ëø
+ * 	¶ÁĞ´Ëø
  *		¶ÁËø¹²Ïí£¬Ğ´ËøÅÅËû
  *
  */

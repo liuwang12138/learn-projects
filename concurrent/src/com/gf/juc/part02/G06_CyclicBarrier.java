@@ -1,5 +1,6 @@
 package com.gf.juc.part02;
 
+import java.util.Random;
 import java.util.concurrent.BrokenBarrierException;
 import java.util.concurrent.CyclicBarrier;
 
@@ -7,6 +8,9 @@ import java.util.concurrent.CyclicBarrier;
  * CylicBarrier - Õ¤À¸
  */
 public class G06_CyclicBarrier {
+	
+	static Random r = new Random();
+	
 	public static void main(String[] args) {
 		
 		CyclicBarrier cb = new CyclicBarrier(20, () -> {
@@ -16,7 +20,7 @@ public class G06_CyclicBarrier {
 		for (int i=0; i<100; i++) {
 			new Thread(()->{
 				try {
-					Thread.sleep((long)Math.random() * 5000);
+					Thread.sleep(r.nextInt(5000));
 					cb.await();
 				} catch (InterruptedException e) {
 					e.printStackTrace();
