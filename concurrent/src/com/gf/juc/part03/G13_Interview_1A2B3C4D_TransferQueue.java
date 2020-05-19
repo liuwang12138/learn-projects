@@ -35,6 +35,18 @@ public class G13_Interview_1A2B3C4D_TransferQueue {
 		}).start();
 		
 		
+		/**
+		 *  ThreadPoolExecutor的七个参数：
+		 *  	coreSize
+		 *  	maxSize
+		 *  	aliveTime
+		 *  	timeUnit
+		 *  	queue
+		 *  	factory
+		 *  	handler
+		 */
+		
+		
 	}
 
 }
