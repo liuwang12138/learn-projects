@@ -7,10 +7,29 @@ package com.gf.algorithm.class01;
 public class G08_EvenTimesOddTimes {
 	
 	public static int oneOddOtherEven(int[] arr) {
-		return -1;
+		int eor = 0;
+		
+		for (int i=0; i<arr.length; i++) {
+			eor ^= arr[i];
+		}
+
+		return eor;
 	}
 	
 	public static int[] twoOddOtherEven(int[] arr) {
+		int eor = 0;
+		for (int i=0; i<arr.length; i++) {
+			eor ^= arr[i];
+		}
+		
+		int rightOne = eor & (~eor + 1);			// ×îÓÒ²àµÄ1
+
+		for (int i=0; i<arr.length; i++) {
+			if (arr[i] & rightOne == 0)
+		}
+		
+		
+		
 		return new int[] {-1, -1};
 	}
 	
