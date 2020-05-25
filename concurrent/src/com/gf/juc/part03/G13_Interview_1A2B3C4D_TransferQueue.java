@@ -34,7 +34,6 @@ public class G13_Interview_1A2B3C4D_TransferQueue {
 			}
 		}).start();
 		
-		
 		/**
 		 *  ThreadPoolExecutor的七个参数：
 		 *  	coreSize
@@ -45,7 +44,6 @@ public class G13_Interview_1A2B3C4D_TransferQueue {
 		 *  	factory
 		 *  	handler
 		 */
-		
 		
 	}
 
