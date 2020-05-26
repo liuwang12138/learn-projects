@@ -24,13 +24,18 @@ public class G08_EvenTimesOddTimes {
 		
 		int rightOne = eor & (~eor + 1);			// 最右侧的1
 
+		int a = 0;
+
 		for (int i=0; i<arr.length; i++) {
-			if (arr[i] & rightOne == 0)
+			if ((arr[i] & rightOne) == 0) {
+				// 第 n 位等于 0 的那部分
+				a ^= arr[i];
+			}
 		}
 		
+		int b = eor ^ a;
 		
-		
-		return new int[] {-1, -1};
+		return new int[] {a, b};
 	}
 	
 	public static void main(String[] args) {

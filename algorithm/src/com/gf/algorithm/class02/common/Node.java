@@ -2,8 +2,8 @@ package com.gf.algorithm.class02.common;
 
 public class Node {
 
-	int value;
-	Node next;
+	public int value;
+	public Node next;
 	
 	public Node(int value) {
 		this.value = value;
