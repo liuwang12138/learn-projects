@@ -42,12 +42,19 @@ package com.gf.algorithm.class04;
  * 		T(N) = N/2 * 2 + N/2 + N/4 + N/8 + ...
  * 			 = N + (N/2 * (1-(1/2)  ^ n)) / (1 - 1/2) = 2N = O(N)
  * 
- *  堆排序的优势：额外空间复杂度为O(1)
- *  
- *  
- *  
- *  
+ *	堆排序的优势：额外空间复杂度为O(1)
+ *	
  */
 public class G01_HeapSort {
+	
+	private int[] arr;					// 数组，用于表示堆中的元素			i	父节点：(i-1)/2	左孩子 i*2+1	右孩子 i*2+2
+	private int heapSize;
+
+	public void push(int k) {
+	}
+	
+	public static void main(String[] args) {
+		
+	}
 
 }
