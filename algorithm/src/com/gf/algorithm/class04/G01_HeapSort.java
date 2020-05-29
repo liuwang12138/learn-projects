@@ -47,9 +47,6 @@ package com.gf.algorithm.class04;
  */
 public class G01_HeapSort {
 	
-	private int[] arr;					// 数组，用于表示堆中的元素			i	父节点：(i-1)/2	左孩子 i*2+1	右孩子 i*2+2
-	private int heapSize;
-
 	public void push(int k) {
 	}
 	

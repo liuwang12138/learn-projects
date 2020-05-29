@@ -38,6 +38,10 @@ package com.gf.algorithm.class03;
  */
 public class G03_QuickSort {
 	
+	public static void partition(int[] arr) {
+		
+	}
+	
 	/**
 	 * 在arr[left...right]上做荷兰国旗的划分，以arr[right]作为划分值
 	 * @return 一个长度为2的数组，表示 等于区域 的左边界和右边界
