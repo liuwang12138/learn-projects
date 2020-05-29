@@ -38,9 +38,28 @@ package com.gf.algorithm.class03;
  */
 public class G03_QuickSort {
 	
-	public static void partition(int[] arr) {
+	public static int partition(int[] arr, int k) {
 		
+		int lessArea = -1;
+
+		for (int i=0; i<arr.length; i++) {
+			
+		}
+		
+		
+		
+		
+		return -1;
 	}
+	
+	private static void swap(int[] arr, int i, int j) {
+		int temp = arr[i];
+		arr[i] = arr[j];
+		arr[j] = temp;
+	}
+	
+	
+	
 	
 	/**
 	 * 在arr[left...right]上做荷兰国旗的划分，以arr[right]作为划分值
